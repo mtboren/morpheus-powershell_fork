@@ -1,0 +1,25 @@
+TOPIC
+    about_Morpheus.PShell
+
+SHORT DESCRIPTION
+    Module encapsulating functions and code snippets for interacting with
+    Morpheus Data environments
+
+LONG DESCRIPTION
+    A module that provides PowerShell cmdlets for managing Morpheus Data
+    environments.
+
+    So much more to put here, surely.
+
+EXAMPLES
+    All of the cmdlets in this module have proper comment-based help.  Discover
+    and learn via the standard PowerShell way:
+
+        Get-Help -Full <cmdlet-name>
+
+KEYWORDS
+    Morpheus
+    MorpheusData
+
+SEE ALSO
+    morpheusdata.com
