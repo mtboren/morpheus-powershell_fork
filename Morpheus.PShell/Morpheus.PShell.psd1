@@ -18,7 +18,7 @@ ModuleVersion = '1.1.0'
 # CompatiblePSEditions = @()
 
 # ID used to uniquely identify this module
-GUID = 'f33abca6-514f-405a-aad7-ca16e119ef3c'
+GUID = '249c50fe-d6d5-4d23-a5fe-f6c4f329f295'
 
 # Author of this module
 Author = 'Chris Bunge, Matt Boren'
@@ -66,21 +66,27 @@ PowerShellVersion = '4.0'
 FormatsToProcess = 'Morpheus.PShell.format.ps1xml'
 
 # Modules to import as nested modules of the module specified in RootModule/ModuleToProcess
-NestedModules = @('Morpheus.Connect.psm1', 
-               'Morpheus.Get.psm1', 
-               'Morpheus.Remove.psm1')
+NestedModules = @('Morpheus.Connect.psm1',
+               'Morpheus.Get.psm1',
+               'Morpheus.Remove.psm1',
+               'Morpheus_SupportingFunctions.ps1')
 
 # Functions to export from this module, for best performance, do not use wildcards and do not delete the entry, use an empty array if there are no functions to export.
-FunctionsToExport = 'Connect-Morpheus'
+FunctionsToExport = 'Connect-Morpheus', 'Get-MDAccount', 'Get-MDApp', 'Get-MDBilling',
+               'Get-MDBlueprint', 'Get-MDBuild', 'Get-MDCloud', 'Get-MDCypher',
+               'Get-MDHistory', 'Get-MDInstance', 'Get-MDPlan', 'Get-MDPolicy',
+               'Get-MDPowerSchedule', 'Get-MDRole', 'Get-MDServer', 'Get-MDTask',
+               'Get-MDTaskType', 'Get-MDUser', 'Get-MDVirtualImage', 'Get-MDWorkflow',
+               'Remove-MDInstance', 'Remove-MDPolicy'
 
 # Cmdlets to export from this module, for best performance, do not use wildcards and do not delete the entry, use an empty array if there are no cmdlets to export.
-CmdletsToExport = '*'
+CmdletsToExport = @()
 
 # Variables to export from this module
 VariablesToExport = 'URL', 'Header'
 
 # Aliases to export from this module, for best performance, do not use wildcards and do not delete the entry, use an empty array if there are no aliases to export.
-AliasesToExport = '*'
+AliasesToExport = @()
 
 # DSC resources to export from this module
 # DscResourcesToExport = @()
@@ -89,9 +95,10 @@ AliasesToExport = '*'
 # ModuleList = @()
 
 # List of all files packaged with this module
-FileList = 'Morpheus.PShell.psd1', 'en-US\about_Morpheus.PShell.help.txt', 
-               'Morpheus.PShell.format.ps1xml', 'Morpheus.Connect.psm1', 
-               'Morpheus.Get.psm1', 'Morpheus.Remove.psm1'
+FileList = 'Morpheus.PShell.psd1', 'en-US\about_Morpheus.PShell.help.txt',
+               'Morpheus.PShell.format.ps1xml', 'Morpheus.Connect.psm1',
+               'Morpheus.Get.psm1', 'Morpheus.Remove.psm1',
+               'Morpheus_SupportingFunctions.ps1'
 
 # Private data to pass to the module specified in RootModule/ModuleToProcess. This may also contain a PSData hashtable with additional module metadata used by PowerShell.
 PrivateData = @{
@@ -99,7 +106,7 @@ PrivateData = @{
     PSData = @{
 
         # Tags applied to this module. These help with module discovery in online galleries.
-        Tags = 'Morpheus','MorpheusData'
+        Tags = 'Morpheus', 'MorpheusData'
 
         # A URL to the license for this module.
         LicenseUri = 'https://uri.of.somwhere/apache-license-2.0.md'
@@ -124,7 +131,7 @@ PrivateData = @{
 
     } # End of PSData hashtable
 
- } # End of PrivateData hashtable
+} # End of PrivateData hashtable
 
 # HelpInfo URI of this module
 # HelpInfoURI = ''
