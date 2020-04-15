@@ -13,7 +13,9 @@ Other things to add/replace eventually
     - this might include adding global variable in which connection info is kept, not only foruse by module, but so that user can use the connection info object(s), too (a la `VMWare.PowerCLI` module for its VIServer connection(s), or the AWS PowerShell modules for the currently "in use" AWS Account)
     - would likely use a bit more module-specific variables names (vs. `URL`, `Header`), so as to prevent possibly overwriting user's existing variables
 - Add support for disconnecting from a Morpheus server (terminate Morpheus session if that is a thing, but even if "disconnecting" is just clearing local variables in the user's PowerShell session, do that)
-- Replace `Check-Flags` with other filtering code (if needed at all?)
+- Replace `Check-Flags` with API-based filtering code
+    - like, by using the actual Query Parameters supported by the API (server-side filtering), versus retrieving _all_ objects and then doing client-side filtering
 - Remove local filesystem references (unless we expect everyone to have `C:\Users\Matt`, for example)
 - Add Argument Completers, so that people can be even more productive/optimized at the command line (tab-completion of values from the Morpheus environment itself -- Workflow names, Cloud names, etc.)
+- Export just the things necessary, and by explicit name (versus exporting things by wildcarding); helps to keep internal things (functions, variables, etc.) internal to the module, and to not clutter up the user's PowerShell session
 - Avoid changing default environment items (like `$FormatEnumerationLimit`) unless super good reason (may already be a great reason to do so)

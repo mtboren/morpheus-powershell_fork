@@ -23,14 +23,15 @@ begin {
 		CompanyName = 'Morpheus Data'
 		Copyright = "Apache 2.0 License"
 		Description = "Module for API interaction with a Morpheus environment"
-		# AliasesToExport = @()
-		FileList = Write-Output "${strModuleName}.psd1" "en-US\about_${strModuleName}.help.txt" "${strModuleName}.format.ps1xml" "${strProductShortname}.Connect.psm1" "${strProductShortname}.Get.psm1" "${strProductShortname}.Remove.psm1" #"${strModuleName}_RegisterArgCompleter.ps1"
+		AliasesToExport = @()
+		CmdletsToExport = ""
+		FileList = Write-Output "${strModuleName}.psd1" "en-US\about_${strModuleName}.help.txt" "${strModuleName}.format.ps1xml" "${strProductShortname}.Connect.psm1" "${strProductShortname}.Get.psm1" "${strProductShortname}.Remove.psm1" "${strProductShortname}_SupportingFunctions.ps1" #"${strModuleName}_RegisterArgCompleter.ps1"
 		FormatsToProcess = "${strModuleName}.format.ps1xml"
-		FunctionsToExport = Write-Output Connect-Morpheus
+		FunctionsToExport = Write-Output Connect-Morpheus Get-MDAccount Get-MDApp Get-MDBilling Get-MDBlueprint Get-MDBuild Get-MDCloud Get-MDCypher Get-MDHistory Get-MDInstance Get-MDPlan Get-MDPolicy Get-MDPowerSchedule Get-MDRole Get-MDServer Get-MDTask Get-MDTaskType Get-MDUser Get-MDVirtualImage Get-MDWorkflow Remove-MDInstance Remove-MDPolicy
 		# IconUri = "http://someurl/pic.gif"
 		LicenseUri = "https://uri.of.somwhere/apache-license-2.0.md"
 		## scripts (.ps1) that are listed in the NestedModules key are run in the module's session state, not in the caller's session state. To run a script in the caller's session state, list the script file name in the value of the ScriptsToProcess key in the manifest
-		NestedModules = Write-Output "${strProductShortname}.Connect.psm1" "${strProductShortname}.Get.psm1" "${strProductShortname}.Remove.psm1" # "${strModuleName}_SupportingFunctions.ps1" "${strModuleName}_RegisterArgCompleter.ps1"
+		NestedModules = Write-Output "${strProductShortname}.Connect.psm1" "${strProductShortname}.Get.psm1" "${strProductShortname}.Remove.psm1" "${strProductShortname}_SupportingFunctions.ps1" # "${strModuleName}_RegisterArgCompleter.ps1"
 		PowerShellVersion = [System.Version]"4.0"
 		ProjectUri = "https://github.com/someUriHere"
 		ReleaseNotes = "See ReadMe and other docs at ProjectUri"
